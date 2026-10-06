@@ -1,164 +1,291 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CJ SAWON | Official Music Producer & Artist</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            black: '#0a0a0a',
-                            card: '#121212',
-                            border: '#262626',
-                            accent: '#ffffff',
-                            subtext: '#a1a1aa'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Outfit', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>Cj Sawon - Music Producer & Artist</title>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: #f4f4f5; }
-        .font-display { font-family: 'Outfit', sans-serif; }
-        .glass-panel { background: rgba(18, 18, 18, 0.8); backdrop-filter: blur(12px); border: 1px solid #262626; }
-        .btn-glow:hover { box-shadow: 0 0 20px rgba(255, 255, 255, 0.15); }
+        :root {
+            --bg-color: #0d0d0d;
+            --card-bg: #161616;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-color: #ffffff;
+            --border-color: #262626;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+        }
+
+        .profile-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            aspect-ratio: 1/1;
+            border-radius: 16px;
+            object-fit: cover;
+        }
+
+        .subtitle {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .btn {
+            background-color: var(--text-primary);
+            color: var(--bg-color);
+            border: none;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .list-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-decoration: none;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .list-info h4 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        .list-info p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .contact-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            padding: 14px;
+            border-radius: 12px;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .instagram-handle {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .instagram-handle a {
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            padding: 20px 0;
+        }
     </style>
 </head>
-<body class="bg-[#050505] text-zinc-100 min-h-screen flex flex-col justify-between selection:bg-white selection:text-black">
+<body>
 
-    <!-- Header -->
-    <header class="fixed top-0 w-full z-50 glass-panel border-b border-zinc-800">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="font-display text-2xl font-black tracking-widest text-white uppercase">
-                CJ SAWON
-            </a>
-
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold tracking-wide text-zinc-400">
-                <a href="#about" class="hover:text-white transition-colors">ABOUT</a>
-                <a href="#discography" class="hover:text-white transition-colors">DISCOGRAPHY</a>
-                <a href="#contact" class="hover:text-white transition-colors">CONTACT</a>
-            </nav>
-
-            <!-- Social Links -->
-            <div class="flex items-center space-x-4 text-lg text-zinc-400">
-                <a href="https://youtube.com/@cjsawon?si=Ta22YV3EDNi1p4zy" target="_blank" class="hover:text-white transition-colors" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                <a href="https://open.spotify.com/artist/4yAy949NAb9kAyakcptI8o?si=NdFzE8aGTY2yyXVaRuzUJg" target="_blank" class="hover:text-white transition-colors" title="Spotify"><i class="fa-brands fa-spotify"></i></a>
-                <a href="https://music.apple.com/us/artist/cj-sawon/1707662287" target="_blank" class="hover:text-white transition-colors" title="Apple Music"><i class="fa-brands fa-apple"></i></a>
-                <a href="https://www.beatstars.com/CjSawon" target="_blank" class="hover:text-white transition-colors" title="BeatStars"><i class="fa-solid fa-music"></i></a>
-                <a href="https://www.instagram.com/cj_sawon" target="_blank" class="hover:text-white transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.facebook.com/share/19Xmk6W4S7/" target="_blank" class="hover:text-white transition-colors" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+    <div class="container">
+        <header>
+            <div class="logo">Cj Sawon</div>
+            <div class="social-links">
+                <a href="https://youtube.com" target="_blank">YouTube</a>
+                <a href="https://spotify.com" target="_blank">Spotify</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <!-- Main Content -->
-    <main class="pt-32 pb-20">
-        <!-- Hero / Profile Section -->
-        <section id="about" class="max-w-7xl mx-auto px-6 mb-24">
-            <div class="glass-panel rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 border border-zinc-800">
-                <!-- Profile Image -->
-                <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-zinc-700 flex-shrink-0 bg-zinc-900">
-                    <img src="profile.jpg" alt="CJ SAWON" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x400/121212/ffffff?text=CJ+SAWON';">
-                </div>
+        <main>
+            <div class="profile-card">
+                <img src="profile.jpg" alt="Cj Sawon" class="profile-img">
+                <div class="subtitle">Music Producer & Artist</div>
+                <h1 class="title">Cj Sawon</h1>
+                <p class="description">Crafting unique hip-hop beats, soundscapes, and digital music experiences. Welcome to the official portfolio and discography hub.</p>
                 
-                <!-- Profile Info -->
-                <div class="space-y-4 text-center md:text-left">
-                    <span class="text-xs uppercase tracking-widest text-zinc-500 font-bold">Music Producer & Artist</span>
-                    <h1 class="font-display text-4xl md:text-6xl font-black text-white tracking-tight">CJ SAWON</h1>
-                    <p class="text-zinc-400 max-w-xl text-sm md:text-base leading-relaxed">
-                        Crafting unique hip-hop beats, soundscapes, and digital music experiences. Welcome to the official portfolio and discography hub.
-                    </p>
-                    <div class="pt-4 flex flex-wrap gap-4 justify-center md:justify-start">
-                        <a href="https://youtube.com/@cjsawon?si=Ta22YV3EDNi1p4zy" target="_blank" class="px-6 py-3 bg-white text-black font-bold rounded-xl text-sm transition btn-glow">
-                            <i class="fa-brands fa-youtube mr-2"></i> Subscribe on YouTube
-                        </a>
-                        <a href="https://www.beatstars.com/CjSawon" target="_blank" class="px-6 py-3 bg-zinc-900 border border-zinc-700 text-white font-bold rounded-xl text-sm hover:bg-zinc-800 transition">
-                            <i class="fa-solid fa-cart-shopping mr-2"></i> Buy Beats (BeatStars)
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Discography Section -->
-        <section id="discography" class="max-w-7xl mx-auto px-6 mb-24">
-            <h2 class="font-display text-2xl md:text-3xl font-bold mb-8 tracking-wide text-white">STREAM & LISTEN</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Platform 1: Spotify -->
-                <div class="glass-panel p-6 rounded-2xl border border-zinc-800 flex items-center justify-between">
-                    <div>
-                        <span class="text-xs text-zinc-500 font-bold uppercase">Streaming</span>
-                        <h3 class="font-bold text-xl text-white mt-1">Spotify</h3>
-                        <p class="text-xs text-zinc-400 mt-1">Listen to official releases & albums</p>
-                    </div>
-                    <a href="https://open.spotify.com/artist/4yAy949NAb9kAyakcptI8o?si=NdFzE8aGTY2yyXVaRuzUJg" target="_blank" class="p-3 bg-zinc-900 border border-zinc-700 rounded-xl hover:text-white hover:bg-zinc-800 transition">
-                        <i class="fa-brands fa-spotify text-xl"></i>
+                <div class="btn-group">
+                    <a href="https://youtube.com" class="btn" target="_blank">
+                        Subscribe on YouTube
                     </a>
-                </div>
-
-                <!-- Platform 2: Apple Music -->
-                <div class="glass-panel p-6 rounded-2xl border border-zinc-800 flex items-center justify-between">
-                    <div>
-                        <span class="text-xs text-zinc-500 font-bold uppercase">Streaming</span>
-                        <h3 class="font-bold text-xl text-white mt-1">Apple Music</h3>
-                        <p class="text-xs text-zinc-400 mt-1">Stream high quality audio</p>
-                    </div>
-                    <a href="https://music.apple.com/us/artist/cj-sawon/1707662287" target="_blank" class="p-3 bg-zinc-900 border border-zinc-700 rounded-xl hover:text-white hover:bg-zinc-800 transition">
-                        <i class="fa-brands fa-apple text-xl"></i>
+                    <a href="https://beatstars.com" class="btn" target="_blank">
+                        Buy Beats (BeatStars)
                     </a>
                 </div>
             </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="max-w-7xl mx-auto px-6">
-            <div class="glass-panel rounded-3xl p-8 md:p-12 border border-zinc-800 text-center space-y-6">
-                <h2 class="font-display text-3xl font-bold text-white">GET IN TOUCH</h2>
-                <p class="text-zinc-400 text-sm max-w-md mx-auto">For beat licensing, custom production, mixing, or business inquiries.</p>
+            <div style="margin-top: 24px;">
+                <h3 class="section-title">Stream & Listen</h3>
                 
-                <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-                    <a href="mailto:Cjsawon354@gmail.com" class="px-6 py-4 bg-zinc-900 border border-zinc-800 rounded-2xl flex items-center justify-center space-x-3 hover:border-zinc-600 transition">
-                        <i class="fa-solid fa-envelope text-zinc-400"></i>
-                        <span class="text-sm font-medium">Cjsawon354@gmail.com</span>
-                    </a>
-                    <a href="https://wa.me/8801317207909" target="_blank" class="px-6 py-4 bg-zinc-900 border border-zinc-800 rounded-2xl flex items-center justify-center space-x-3 hover:border-zinc-600 transition">
-                        <i class="fa-brands fa-whatsapp text-zinc-400"></i>
-                        <span class="text-sm font-medium">+880 1317-207909</span>
+                <a href="https://spotify.com" class="list-card" target="_blank">
+                    <div class="list-info">
+                        <h4>Spotify</h4>
+                        <p>Listen to official releases & albums</p>
+                    </div>
+                </a>
+
+                <a href="https://apple.com" class="list-card" target="_blank">
+                    <div class="list-info">
+                        <h4>Apple Music</h4>
+                        <p>Stream high quality audio</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="contact-section" style="margin-top: 24px;">
+                <h3 class="section-title">Get in Touch</h3>
+                <p class="description">For beat licensing, custom production, mixing, or business inquiries.</p>
+                
+                <div class="contact-links">
+                    <a href="mailto:Cjsawon354@gmail.com" class="contact-card">
+                        ✉️ Cjsawon354@gmail.com
                     </a>
                 </div>
 
-                <!-- Secondary Instagram Link (CJ Beatzz) -->
-                <div class="pt-2 text-xs text-zinc-500">
-                    Beats Instagram: <a href="https://www.instagram.com/cj_beatzz" target="_blank" class="text-zinc-300 underline hover:text-white">@cj_beatzz</a>
+                <div class="instagram-handle">
+                    Beats Instagram: <a href="https://instagram.com/_cj_beattz" target="_blank">@_cj_beattz</a>
                 </div>
             </div>
-        </section>
-    </main>
+        </main>
 
-    <!-- Footer -->
-    <footer class="border-t border-zinc-900 py-8 text-center text-xs text-zinc-600">
-        <p>&copy; 2026 CJ SAWON. All rights reserved.</p>
-    </footer>
+        <footer>
+            © 2026 Cj Sawon. All rights reserved.
+        </footer>
+    </div>
 
 </body>
-            </html>
-            
+</html>
